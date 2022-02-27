@@ -20,7 +20,8 @@ const notifyServiceSid = process.env.NOTIFY_SERVICE_SID;
 
 const client = require('twilio')(accountSid, authToken);
 
-client.notify.services(notifyServiceSid) 
+function sendMessage() {
+   client.notify.services(notifyServiceSid) 
   .notifications.create({
     toBinding: JSON.stringify({
         binding_type: 'sms', address: '+5137603873'
@@ -29,4 +30,4 @@ client.notify.services(notifyServiceSid)
   })
   .then(notification => console.log(notification.sid))
   .catch(error => console.log(error));
-
+}
