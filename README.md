@@ -10,7 +10,7 @@ RevolutionUC Hackathon project that uses Twilio API and Twitter API to send SMS 
    <img src="https://user-images.githubusercontent.com/46828931/155876466-e0bf4928-549c-4e13-9c9c-7dcfe23e8742.png" width="500" height="800"/>
 </p>
 
-<p align="center>
+<p align="center">
   <img src="https://user-images.githubusercontent.com/46828931/155876468-41a0ff1b-3939-4a5c-a4f6-9e5c629d2954.png" width="500" height="800"/>
 </p>
 ## Credits
