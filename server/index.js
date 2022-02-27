@@ -6,13 +6,13 @@ const notifyServiceSid = process.env.NOTIFY_SERVICE_SID;
 
 const client = require('twilio')(accountSid, authToken);
 
-function sendMessage() {
+function sendMessage(tweet) {
   client.notify.services(notifyServiceSid) 
   .notifications.create({
     toBinding: JSON.stringify({
-        binding_type: 'sms', address: '+5137603873'
+        binding_type: 'sms', address: '+15137603873'
     }),
-    body: 'Test'
+    body: tweet
   })
   .then(notification => console.log(notification.sid))
   .catch(error => console.log(error));
@@ -40,7 +40,7 @@ const rulesURL = 'https://api.twitter.com/2/tweets/search/stream/rules'
 const streamURL =
   'https://api.twitter.com/2/tweets/search/stream?tweet.fields=public_metrics&expansions=author_id'
 
-const rules = [{ value: 'giveaway' }]
+const rules = [{ "value":"(from:MarquardtA OR from:IAPonomarenko OR from:KyivIndependent OR from:UkraineUpdates3)" }]
 
 // Get stream rules
 async function getRules() {
@@ -49,7 +49,7 @@ async function getRules() {
       Authorization: `Bearer ${TOKEN}`,
     },
   })
-  console.log(response.body)
+  console.log(response.body.text)
   return response.body
 }
 
@@ -104,7 +104,11 @@ function streamTweets(socket) {
     try {
       const json = JSON.parse(data)
       console.log(json)
+      //console.log(json.data.text)
       socket.emit('tweet', json)
+      //console.log(JSON.stringify(data.text))
+      //sendMessage(JSON.stringify(data.text))
+      sendMessage(json.data.text)
     } catch (error) {}
   })
 
