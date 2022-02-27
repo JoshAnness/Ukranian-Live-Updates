@@ -13,6 +13,8 @@ RevolutionUC Hackathon project that uses Twilio API and Twitter API to send SMS 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/46828931/155876468-41a0ff1b-3939-4a5c-a4f6-9e5c629d2954.png" width="500" height="800"/>
 </p>
+
 ## Credits
+
 Traversery Media
 David McCoy & Mitch Meyer
