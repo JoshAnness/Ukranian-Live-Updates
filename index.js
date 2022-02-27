@@ -11,6 +11,7 @@ app.get('/', (req, res) => res.send('Welcome to Twilio Twitter SMS Notification'
 
 app.listen(port, () => console.log(`Server listening on port ${port}!`));
 */
+
 // Twilio Test
 require('dotenv').config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
