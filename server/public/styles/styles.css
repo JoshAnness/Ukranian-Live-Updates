@@ -1,0 +1,6 @@
+body {
+    background-image: url(../images/ukraine_flag.png);
+    /*background-position-y: 0%;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+}
