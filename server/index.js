@@ -10,7 +10,7 @@ function sendMessage(tweet) {
   client.notify.services(notifyServiceSid) 
   .notifications.create({
     toBinding: JSON.stringify({
-        binding_type: 'sms', address: '+15137603873'
+        binding_type: 'sms', address: '+13157591947'
     }),
     body: tweet
   })
@@ -31,6 +31,10 @@ const app = express()
 
 const server = http.createServer(app)
 const io = socketIo(server)
+
+// CSS FIX
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.resolve(__dirname, '../', 'client', 'index.html'))
