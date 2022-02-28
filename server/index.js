@@ -3,6 +3,7 @@ const config = require('dotenv').config();
 const accountSid = process.env.TWILIO_ACCOUNT_SID;
 const authToken = process.env.TWILIO_AUTH_TOKEN;
 const notifyServiceSid = process.env.NOTIFY_SERVICE_SID;
+const phone_number = process.env.PHONE_NUMBER;
 
 const client = require('twilio')(accountSid, authToken);
 
@@ -10,7 +11,7 @@ function sendMessage(tweet) {
   client.notify.services(notifyServiceSid) 
   .notifications.create({
     toBinding: JSON.stringify({
-        binding_type: 'sms', address: '+13157591947'
+        binding_type: 'sms', address: phone_number
     }),
     body: tweet
   })
